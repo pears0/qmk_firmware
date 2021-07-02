@@ -98,6 +98,7 @@ static void render_logo(void) {
     };
     // Host Keyboard Layer Status
     oled_write_raw_P(nibble_logo, sizeof(nibble_logo));
+    oled_scroll_right();
 }
 
 void oled_task_user(void) {
