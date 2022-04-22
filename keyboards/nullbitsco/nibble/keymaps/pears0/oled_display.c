@@ -83,7 +83,7 @@ void render_idle(void) {
     oled_write_P(led_state.caps_lock ? PSTR("C ") : PSTR("  "), false);
     oled_write_P(PSTR("\n"), false);
     oled_write_P(oled_mode_icons[0][1], false);
-    oled_write_P(PSTR("  Gonzo Kbd"), false);
+    oled_write_P(PSTR(" Gonzo Kbd"), false);
     oled_write_P(PSTR("\n"), false);
     oled_write_P(oled_mode_icons[0][2], false);
     oled_write_P(PSTR("\n"), false);
