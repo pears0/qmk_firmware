@@ -59,7 +59,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // clang-format off
 // clang-format on
 
-#ifdef OLED_ENABLE
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
     oled_timer = timer_read32();
     set_oled_mode(OLED_MODE_IDLE);
@@ -73,7 +72,6 @@ bool oled_task_user(void) {
     render_frame();
     return false;
 }
-#endif
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     // Send keystrokes to host keyboard, if connected (see readme)
@@ -82,9 +80,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case RGB_TOG:
             if (record->event.pressed) {
-#ifdef OLED_ENABLE
                 process_record_keymap_oled(keycode);
-#endif
             }
             break;
         case KC_CUST:  // custom macro
